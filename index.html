@@ -164,7 +164,7 @@
 
           <div  h-5 style="width: 95%; "rows>
           <input  center type="search" w-90p h-4 rad-50  m-3 b-gray shadow placeholder="search arabinum..." p-2 id="input">
-          <h1></h1>
+          <h1 id="grok"></h1>
           <button btn="white" id="white">search</button>
           </div>
 
@@ -172,7 +172,7 @@
       </div>
       
     </div>
-    <h1>research papers</h1>
+    <h1 >research papers</h1>
     <div  w-full flex-auto id="reso">
 
 
@@ -380,10 +380,10 @@
   }
 
     }
-
+ var grok=document.getElementById('grok');
   window.onkeypress=function(){
    
-   var grok=document.getElementById('grok');
+  
           
    
         puter.ai.chat(`respond to the word or sentence do u think that user is tring to search about witjout any extra text`, { model: "gemini-2.5-flash-lite" }).then(response => {
