@@ -53,7 +53,11 @@
           [data-hide-desktop]{
                   display: none;
               }
-
+[flexo]{
+  
+display: flex;
+              flex-direction: row;
+}
           @media(max-width:700px){
 
               [data-hide-mobile]{
@@ -66,6 +70,10 @@
               height: 10rem;
               width:10rem;
 
+            }
+            [flexo]{
+              display: flex;
+              flex-direction: columns;
             }
             [data-max-size]{
               max-height: 300px;
@@ -172,8 +180,8 @@
       </div>
       
     </div>
-    <h1 >research papers</h1>
-    <div  w-full flex-auto id="reso">
+  
+    <div  w-full flexo id="reso" >
 
 
     </div>
