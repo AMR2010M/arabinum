@@ -190,6 +190,7 @@ display: flex;
     var white =document.getElementById('white');
     white.onclick= async function(){
       rc.innerHTML='';
+       out.innerHTML='';
       var input =document.getElementById('input').value;
         var out =document.getElementById('out');
   const { data, error } = await supabase.functions.invoke('search', {
