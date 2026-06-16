@@ -300,7 +300,8 @@ display: flex;
     body: { query: input },
            body: { ceo: ceor }
   })
-  for(const item of data){
+    z=data.json();
+  for(const item of z){
     var xox=item.video;
     var videox=`
     <div class="flex justify-center" columns>
@@ -320,7 +321,7 @@ display: flex;
   console.log(xox)
   }
   } catch (error) {
-    console.error(error);
+  alert(error);
   }
 
  var grok=document.getElementById('grok');
