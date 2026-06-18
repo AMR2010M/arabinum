@@ -214,7 +214,7 @@ flex-direction: row-reverse;
           var xxoo='';
           async function filter(imgu){
              const { mydata, myerror } = await supabase.functions.invoke('youtube', {
-    body: { image: imgu, 
+    body: { img: imgu, 
 
       classes:'male,female'
     },
