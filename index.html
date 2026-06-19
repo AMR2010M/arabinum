@@ -381,6 +381,7 @@ try {
 }
  var grok=document.getElementById('grok');
  async function savesite(website,image) {
+      const { data: { user } } = await supabase.auth.getUser();
   if(user){
 const { error } = await supabase.from('saved_wesites').insert({
             website: website,
@@ -400,10 +401,11 @@ const { error } = await supabase.from('saved_wesites').insert({
 var savebtns=document.querySelectorAll(".savy");
 
 savebtns.forEach((btn) => {
+  btn.onclick=function(){
   console.log('save clicked')
   let savedwebsite=btn.value;
   let savedimage=btn.alt;
-   savesite(savedwebsite,savedimage);
+   savesite(savedwebsite,savedimage);}
 });
 }
  window.addEventListener("keydown", function(event) {
