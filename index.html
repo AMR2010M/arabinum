@@ -197,14 +197,15 @@ console.log('POWERD BY AMRZ OS 1.4')
       const supabase = createClient(supabaseUrl, supabaseKey);
     var white =document.getElementById('white');
       var out =document.getElementById('out');
-         var ai =document.getElementById('ai');
+     
     white.onclick= async function(){
+          var ai =document.getElementById('ai');
       var ceor = document.getElementById('arabic').value;
       rc.innerHTML='';
        out.innerHTML='';
       ai.innerText='Thinking please wait for AI over view....';
       var input =document.getElementById('input').value;
-var ai =document.getElementById('ai');
+
   const { data, error } = await supabase.functions.invoke('search', {
     body: { query: input },
   })
@@ -415,7 +416,7 @@ savebtns.forEach((btn) => {
         tools: [{ type: "web_search" }],
     });
     
-    document.getElementById("ai").innerText = summary;
+ai.innerText = summary;
 }
       get(input)
 }
