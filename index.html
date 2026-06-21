@@ -179,7 +179,7 @@ flex-direction: row-reverse;
 
 
 </div>
-<p w-80p gray  min-h-10 rad-2 p-5 m-5   id='ai' center nof></p>
+
     <div  w-full  flexo style='width:95%' center>
 
           <div  id="rc" w-100p     >
@@ -413,19 +413,8 @@ savebtns.forEach((btn) => {
   console.log(JSON.parse(localStorage.getItem('mywebs')))
   }
 });
-      async function get(que) {
-    const summary = await puter.ai.chat(`search and make an ai overview on the user query without writing source urls and in the coutry : ${ceor}:${que}`, {
-        model: "openai/gpt-5.2-chat",
-        tools: [{ type: "web_search" }],
-    });
-    
-ai.innerText = summary;
-}
-      get(input)
-      ai.innerHTML = linkifyHtml(ai.innerHTML, {
-            defaultProtocol: 'https',
-            target: '_blank' 
-        });
+      
+   
 }
  window.addEventListener("keydown", function(event) {
 
