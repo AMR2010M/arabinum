@@ -188,6 +188,9 @@ flex-direction: row-reverse;
           <div id='out' nof w-100p >
 
     </div>
+    <div id="it" rows w-full h-10 style="overflow-x: scroll;"> 
+  
+</div>
           </div>
   </body>
   </html>
@@ -200,7 +203,7 @@ console.log('POWERD BY AMRZ OS 1.4')
       const supabase = createClient(supabaseUrl, supabaseKey);
     var white =document.getElementById('white');
       var out =document.getElementById('out');
-     
+     var it =document.getElementById('it');
     white.onclick= async function(){
          
       var ceor = document.getElementById('arabic').value;
@@ -420,8 +423,44 @@ savebtns.forEach((btn) => {
   console.log(JSON.parse(localStorage.getItem('mywebs')))
   }
 });
-      
-   
+      const shurl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(input)}&type=video&videoDuration=short&key=${apiKey}&maxResults=5`;
+   try {
+
+  const response = await fetch(url);
+
+  if (!response.ok) {
+    throw new Error(`خطأ من اليوتيوب: ${response.status}`);
+  }
+
+  const result = await response.json();
+
+  // في جوجل، النتائج تكون داخل مصفوفة اسمها items
+  const vt = result.items;
+
+  for (const item of vt) {
+    // استخراج بيانات الفيديو من المسارات الجديدة لجوجل
+    const title = item.snippet.title;
+    const description = item.snippet.description; // الوصف الجديد
+    const thumbnailUrl = item.snippet.thumbnails.high.url; // أعلى جودة متوفرة في البحث
+    const videoId = item.id.videoId; // صيغة المعرف الجديدة في البحث
+
+    const videoxe = `
+    <a href='/yt?id=${videoId}'>
+    <div h-8 w-30p class='rounded-md' style='background-img:url('${thumbnailUrl}') ;'>
+      </div>
+    `
+
+    it.innerHTML += videoxe;
+    console.log(item);
+  }
+  document.getElementById('rc').scrollIntoView({ 
+    behavior: 'smooth', 
+    block: 'start' 
+});
+
+} catch (error) {
+  console.error("حدث خطأ أثناء جلب البيانات:", error);
+}
 }
  window.addEventListener("keydown", function(event) {
 
