@@ -127,6 +127,8 @@ flex-direction: row-reverse;
 
         </div>
 
+      
+
         <div class="w-full max-w-2xl px-4">
             <div class="relative">
                 <input type="text" class="w-full border border-gray-300 rounded-full py-3 px-5 focus:outline-none focus:shadow-lg" id="input" placeholder='search for anything'>
@@ -217,7 +219,7 @@ console.log('POWERD BY AMRZ OS 1.6')
       var out =document.getElementById('out');
      var it =document.getElementById('it');
     white.onclick= async function(){
-      
+        var input =document.getElementById('input').value;
 const result = await classifier(
 input, 
   ["sex", "haram", "voilance",'alcohol','cars'] 
@@ -227,7 +229,7 @@ input,
       rc.innerHTML='';
        out.innerHTML='';
    
-      var input =document.getElementById('input').value;
+    
 
   const { data, error } = await supabase.functions.invoke('search', {
     body: { query: input },
