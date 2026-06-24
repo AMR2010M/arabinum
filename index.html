@@ -221,12 +221,8 @@ console.log('POWERD BY AMRZ OS 1.7')
      var it =document.getElementById('it');
     white.onclick= async function(){
         var input =document.getElementById('input').value;
-      var harams=[
-  "sex", "porn", "pornography", "erotic", "جنس", "إباحي", "إباحية", "مثير", "sexe", "pornographie", "érotique", "sexo", "pornografía", "erótico", "porno", "pornografie", "erotisch", "секс", "порно", "эротика", "سکس", "پورنو", "اروتیک", "性", "色情", "色欲", "セックス", "ポルノ", "エロティック",
-  "gambling", "betting", "casino", "قمار", "مراهنات", "كازينو", "jeux d'argent", "paris", "apuestas", "juego", "glücksspiel", "wetten", "азартные игры", "ставки", "казино", "قمار", "شرط‌بندی", "کازینو", "赌博", "博彩", "赌场", "ギャンブル", "賭け", "カジノ",
-  "alcohol", "wine", "liquor", "drugs", "narcotics", "كحول", "نبيذ", "مشروبات", "مخدرات", "عقاقير", "alcool", "vin", "liqueur", "drogue", "stupéfiants", "alcohol", "vino", "licor", "drogas", "narcóticos", "alkohol", "wein", "spirituosen", "drogen", "rauschgift", "алкоголь", "вино", "наркотики", "الکل", "شراب", "مواد مخدر", "酒精", "酒", "药物", "毒品", "アルコール", "ワイン", "薬物", "麻薬",
-  "suicide", "magic", "witchcraft", "atheism", "انتحار", "سحر", "شعوذة", "إلحاد", "suicide", "magie", "sorcellerie", "athéisme", "suicidio", "magia", "brujería", "ateísmo", "selbstmord", "magie", "hexerei", "atheismus", "самоубийство", "магия", "колдовство", "атеизм", "خودکشی", "جادو", "الحاد", "自杀", "魔法", "巫术", "无神论", "自殺", "魔法", "魔術", "無神論","لعاب نارية",
-]
+      var harams=["sex", "porn", "pornography", "erotic", "جنس", "إباحي", "إباحية", "مثير", "gambling", "betting", "casino", "قمار", "مراهنات", "كازينو", "alcohol", "wine", "liquor", "drugs", "narcotics", "كحول", "نبيذ", "مشروبات", "مخدرات", "عقاقير", "suicide", "magic", "witchcraft", "atheism", "انتحار", "سحر", "شعوذة", "إلحاد"]
+
 const result = await classifier(input,harams);   
       console.log(result)
    var   scores=result.scores;
