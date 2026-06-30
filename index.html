@@ -226,9 +226,9 @@ console.log('POWERD BY AMRZ OS 1.7')
         var input =document.getElementById('input').value;
       var harams=["sex", "porn", "pornography", "erotic", "جنس", "إباحي", "إباحية", "مثير", "gambling", "betting", "casino", "قمار", "مراهنات", "كازينو", "alcohol", "wine", "liquor", "drugs", "narcotics", "كحول", "نبيذ", "مشروبات", "مخدرات", "عقاقير", "suicide", "magic", "witchcraft", "atheism", "انتحار", "سحر", "شعوذة", "إلحاد"]
 
-const result = await classifier(input,harams);   
+  
       console.log(result)
-   var   scores=result.scores;
+ 
       var isharam=false;
       for(const haram of harams){
         if(input.includes(haram)){
@@ -246,20 +246,8 @@ const result = await classifier(input,harams);
           
         }
       }
-for(const score of scores){    
-if (score>0.7) {
-   Swal.fire({
-            title: 'Blocked!',
-            text: 'This query  seems to be haram  please try again with something halal',
-            icon: 'error',
-            confirmButtonText: 'OK',
-            confirmButtonColor: '#3085d6'
-        })
-   isharam=true;
-break;
-}
-}
-if(!isharam){
+
+
  
       var ceor = document.getElementById('arabic').value;
       rc.innerHTML='';
@@ -452,8 +440,17 @@ try {
 }
          white.style.display='block';
  var grok=document.getElementById('grok');
+ loading.style.display='none';
+}
+    
+ window.addEventListener("keydown", function(event) {
 
-      
+  if (event.key === "Enter") {
+
+    white.click();
+  }
+   
+});
  async function savesite(website) {
     
    if(localStorage.getItem('mywebs')){
@@ -480,19 +477,6 @@ savebtns.forEach((btn) => {
   console.log(JSON.parse(localStorage.getItem('mywebs')))
   }
 });
-}
-loading.style.display='none';
-}
-    
- window.addEventListener("keydown", function(event) {
-
-  if (event.key === "Enter") {
-
-    white.click();
-  }
-   
-});
-
     
   </script>
 
