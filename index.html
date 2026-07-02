@@ -291,7 +291,7 @@ async function searchGitHub(query) {
     console.log(`Found ${data.total_count} repositories. Top results:`);
     data.items.forEach(repo => {
       console.log(`- ${repo.full_name} (⭐ ${repo.stargazers_count}): ${repo.html_url}`);
-      reso=`
+     var reso=`
   <a href=' ${repo.html_url}'>
 
       <div handdrawn class="bg-white dark:bg-gray-800 border linkedin-border rounded-lg shadow-sm max-w-xl w-full overflow-hidden mb-5">
