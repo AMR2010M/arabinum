@@ -573,11 +573,12 @@ const options = {
 try {
 	const response = await fetch(url, options);
 	const result = await response.json();
+	var tracks=result.data.tracks;
 	console.log(result);
 	
 let index = 0; 
 
-for (let track of result) {
+for (let track of tracks) {
     if (index > 3) {
         break; 
     }
