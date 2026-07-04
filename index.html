@@ -222,7 +222,7 @@ flex-direction: row-reverse;
 
 
     import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
-console.log('POWERD BY AMRZ OS 2.9')
+console.log('POWERD BY AMRZ OS 3.0')
       const supabaseUrl = 'https://nymndfucfwgjfxhawkxx.supabase.co';
       const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im55bW5kZnVjZndnamZ4aGF3a3h4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYxMDU3NzUsImV4cCI6MjA5MTY4MTc3NX0.fuqQ5_VDW4wq3ENsqop9SJ_c3P333UKQSnZmxNZPbZk";
   var rc=document.getElementById('rc');
@@ -623,17 +623,12 @@ const options = {
 	try {
     const response = await fetch(urla, options);
     const fofy = await response.json();
-    const products = fofy.data.products || [];
+    const products = fofy.data.products;
 
     container.innerHTML = '';
 
-    if (products.length === 0) {
-        container.innerHTML = '';
-        return;
-    }
-
+   
     products.forEach(product => {
-        // إنشاء البطاقة مع استخدام البيانات الجديدة
         container.innerHTML += `
         <article class="max-w-sm w-full bg-white rounded-lg shadow-lg overflow-hidden dark:bg-gray-700 mb-6">
             <div class="relative">
