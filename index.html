@@ -608,7 +608,7 @@ try {
          white.style.display='block';
  var grok=document.getElementById('grok');
  loading.style.display='none';
-		const urla = 'https://real-time-product-search.p.rapidapi.com/deals?q=Laptop&limit=3&page=1&country=eg&language=en&sort_by=BEST_MATCH&product_condition=ANY&return_filters=true';
+		const urla = `https://real-time-product-search.p.rapidapi.com/deals?q=${input}&limit=3&page=1&country=eg&language=en&sort_by=BEST_MATCH&product_condition=ANY&return_filters=true`;
 const options = {
 	method: 'GET',
 	headers: {
@@ -624,7 +624,7 @@ const options = {
     const response = await fetch(urla, options);
     const fofy = await response.json();
     const products = fofy.data.products;
-
+console.log(products)
     container.innerHTML = '';
 
    
