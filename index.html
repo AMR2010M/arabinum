@@ -621,12 +621,10 @@ try {
 	const response = await fetch(urla, options);
 
 	var fofy=await response.json();
-	
+	var sos=fofy.data.products;
 	const container = document.getElementById('pros');
 
-// نستخدم مصفوفة المنتجات الموجودة داخل الـ data
-for (const product of fofy.products) {
-    // التحقق من وجود سعر (لتجنب عرض منتجات فارغة)
+for (const product of sos ) {
     if (product.product_price) {
         container.innerHTML += `
         <div class="max-w-md mx-auto rounded-md overflow-hidden shadow-md hover:shadow-lg mb-6">
