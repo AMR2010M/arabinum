@@ -606,29 +606,7 @@ try {
  var grok=document.getElementById('grok');
  loading.style.display='none';
 }
-}
-
- window.addEventListener("keydown", function(event) {
-
-  if (event.key === "Enter") {
-
-    white.click();
-  }
-
-});
- async function savesite(website) {
-
-   if(localStorage.getItem('mywebs')){
-       var websites=JSON.parse(localStorage.getItem('mywebs'));;
-     websites.push(website)
-localStorage.setItem('mywebs', JSON.stringify(websites))
-                   }
-    else{
-           var websites = [];
-             websites.push(website)
-localStorage.setItem('mywebs', JSON.stringify(websites))
-      }
-const urla = `https://real-time-amazon-data.p.rapidapi.com/search?query=${input}&page=1&country=eg&sort_by=RELEVANCE&product_condition=NEW&is_prime=false&deals_and_discounts=NONE&language=ar_AE`;
+		const urla = `https://real-time-amazon-data.p.rapidapi.com/search?query=${input}&page=1&country=eg&sort_by=RELEVANCE&product_condition=NEW&is_prime=false&deals_and_discounts=NONE&language=ar_AE`;
 const options = {
 	method: 'GET',
 	headers: {
@@ -659,6 +637,29 @@ savebtns.forEach((btn) => {
   console.log(JSON.parse(localStorage.getItem('mywebs')))
   }
 });
+
+}
+
+ window.addEventListener("keydown", function(event) {
+
+  if (event.key === "Enter") {
+
+    white.click();
+  }
+
+});
+ async function savesite(website) {
+
+   if(localStorage.getItem('mywebs')){
+       var websites=JSON.parse(localStorage.getItem('mywebs'));;
+     websites.push(website)
+localStorage.setItem('mywebs', JSON.stringify(websites))
+                   }
+    else{
+           var websites = [];
+             websites.push(website)
+localStorage.setItem('mywebs', JSON.stringify(websites))
+      }
 
   </script>
 
