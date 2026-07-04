@@ -264,6 +264,52 @@ console.log('POWERD BY AMRZ OS 1.7')
 
 
 if(!isharam){
+	
+		const url = `https://soundcloud-scraper1.p.rapidapi.com/api/tracks/search?query=${input}`;
+const options = {
+	method: 'GET',
+	headers: {
+		'x-rapidapi-key': '613c838613msh719a5cec0364b5ap14354cjsnd6610da5e4f2',
+		'x-rapidapi-host': 'soundcloud-scraper1.p.rapidapi.com',
+		'Content-Type': 'application/json'
+	}
+};
+
+try {
+	const response = await fetch(url, options);
+	const result = await response.json();
+	var tracks=result.data.tracks;
+	console.log(result);
+	
+let index = 0; 
+
+for (let track of tracks) {
+    if (index > 3) {
+        break; 
+    }
+
+    let trackId = track.id;
+    let newTrack = `
+        <div class="track-item">
+            <h3>${track.title}</h3>
+            <iframe 
+                width="100%" 
+                height="166" 
+                scrolling="no" 
+                frameborder="no" 
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${trackId}">
+            </iframe>
+        </div>
+    `;
+
+
+    rc.innerHTML += newTrack;
+
+    index++; د
+}
+} catch (error) {
+	console.error(error);
+}
   const { data, error } = await supabase.functions.invoke('search', {
     body: { query: input },
   })
@@ -273,9 +319,9 @@ if(!isharam){
       var dato='';
           var xxoo='';
 
-  // Function to search GitHub repositories
+
 async function searchGitHub(query) {
-  // encodeURIComponent ensures spaces and special characters are formatted correctly for the URL
+ 
   const url = `https://api.github.com/search/repositories?q=${encodeURIComponent(query)}&per_page=3`;
 
   try {
@@ -559,51 +605,6 @@ try {
          white.style.display='block';
  var grok=document.getElementById('grok');
  loading.style.display='none';
-}
-		const url = `https://soundcloud-scraper1.p.rapidapi.com/api/tracks/search?query=${input}`;
-const options = {
-	method: 'GET',
-	headers: {
-		'x-rapidapi-key': '613c838613msh719a5cec0364b5ap14354cjsnd6610da5e4f2',
-		'x-rapidapi-host': 'soundcloud-scraper1.p.rapidapi.com',
-		'Content-Type': 'application/json'
-	}
-};
-
-try {
-	const response = await fetch(url, options);
-	const result = await response.json();
-	var tracks=result.data.tracks;
-	console.log(result);
-	
-let index = 0; 
-
-for (let track of tracks) {
-    if (index > 3) {
-        break; 
-    }
-
-    let trackId = track.id;
-    let newTrack = `
-        <div class="track-item">
-            <h3>${track.title}</h3>
-            <iframe 
-                width="100%" 
-                height="166" 
-                scrolling="no" 
-                frameborder="no" 
-                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${trackId}">
-            </iframe>
-        </div>
-    `;
-
-
-    rc.innerHTML += newTrack;
-
-    index++; د
-}
-} catch (error) {
-	console.error(error);
 }
 }
 
