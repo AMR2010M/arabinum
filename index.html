@@ -196,7 +196,7 @@ flex-direction: row-reverse;
         </div>
     </main>
 </div>
-<div  responsive id='pros' handdrawn>
+<div  rows  id='pros' handdrawn>
 	
 </div>
     <div  w-full  flexo style='width:95%' center>
@@ -631,13 +631,13 @@ for (const product of sos ) {
 	
     if (product.product_price) {
        container.innerHTML += `
-<article class="  bg-white rounded-lg shadow-lg overflow-hidden w-30" >
+<article class="  bg-white rounded-lg shadow-lg overflow-hidden max-w-sm " >
     <div>
         <img class="object-cover h-64 w-full" src="${product.product_photo}" alt="${product.product_title}" />
     </div>
 
     <div class="flex flex-col gap-1 mt-4 px-4 w-full">
-        <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-50">${product.product_title.substring}...</h2>
+        <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-50">${product.product_title.substring}</h2>
 
         <span class="font-semibold text-gray-800 dark:text-gray-50">${product.product_price}</span>
     </div>
